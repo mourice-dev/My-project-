@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Age Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      #year-results,
+      #months-results,
+      #days-results {
+        font-family: "Poppins", serif;
+        word-spacing: 20;
+      }
+      span {
+        margin-left: 10px;
+      }
+      #container {
+        border-radius: 5%;
+        border-bottom-right-radius: 60px;
+      }
+      .colors {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body class="bg-stone-200">
+    <div
+      class="bg-white py-10 mt-5 w-[100%] ml-2 px-px shadow-lg sm:max-w-[62%] sm:ml-32 sm:mt-10 md:w-[75%] md:ml-20 md:mt-10 lg:w-[45%] lg:ml-52"
+      id="container"
+    >
+      <div class="flex space-x-2 mx-8 my-10 min-[320px]:text-black md:mx-10">
+        <div class="flex flex-col">
+          <label
+            for="day"
+            class="capitalize font-semibold text-gray-600 text-base md:text-lg md:font-bold"
+            >day</label
+          >
+          <input
+            type="text"
+            id="day"
+            class="border-2 border-gray-300 w-24 p-2 font-bold text-sm outline-none rounded-xl sm:p-3 cursor-pointer hover:border-purple-500 transition-colors duration-100 delay-75 md:w-32 md:p-2 md:text-lg lg:p-2"
+            placeholder="DD"
+          />
+          <div id="day-error" class="text-red-500 text-sm hidden h-4">
+            this field is required
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <label
+            for="month"
+            class="capitalize font-semibold text-gray-600 text-base md:text-lg md:font-bold"
+            >month</label
+          >
+          <input
+            type="text"
+            id="month"
+            class="border-2 border-gray-300 w-24 p-2 font-bold text-sm outline-none rounded-xl sm:p-3 cursor-pointer transition-colors duration-100 delay-150 hover:border-purple-500 md:w-32 md:p-2 md:text-lg lg:p-2"
+            placeholder="MM"
+          />
+          <div id="month-error" class="text-red-500 text-sm hidden h-4">
+            this field is required
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <label
+            for="year"
+            class="capitalize font-semibold text-gray-600 text-base md:text-lg md:font-bold"
+            >year</label
+          >
+          <input
+            type="text"
+            id="year"
+            class="border-2 border-gray-300 w-24 p-2 font-bold text-sm outline-none rounded-xl sm:p-3 cursor-pointer transition-colors duration-100 delay-150 hover:border-purple-500 md:w-32 md:p-2 md:text-lg lg:p-2"
+            placeholder="YYY"
+          />
+          <div id="year-error" class="text-red-500 text-sm hidden h-4">
+            this field is required
+          </div>
+        </div>
+      </div>
+      <div class="border-b-2 mt-2 md:mr-10"></div>
+      <button
+        id="button"
+        class="text-white bg-purple-500 text-4xl font-bold rounded-full size-14 ml-32 -mt-9 sm:ml-36 md:ml-[85%] transition-all delay-100 duration-75 hover:bg-black"
+      >
+        &downarrow;
+      </button>
+
+      <div id="year-results" class="ml-10">
+        <p class="text-5xl lowercase space-x-20 text-purple-500 font-bold">
+          --<span class="text-black font-extrabold">Year</span>
+        </p>
+      </div>
+      <div id="months-results" class="ml-10">
+        <p class="text-5xl lowercase space-x-20 text-purple-500 font-bold">
+          --<span class="text-black font-extrabold">month</span>
+        </p>
+      </div>
+      <div id="days-results" class="ml-10">
+        <p class="text-5xl lowercase space-x-20 text-purple-500 font-bold">
+          --<span class="text-black font-extrabold">day</span>
+        </p>
+      </div>
+    </div>
+    <script src="calculation.js"></script>
+  </body>
+</html>
